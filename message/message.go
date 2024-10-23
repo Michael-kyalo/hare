@@ -7,8 +7,10 @@ import (
 
 // Message represents a message with headers and a body
 type Message struct {
-	Headers map[string]string
-	Body    []byte
+	ID            string            `json:"id"`
+	Headers       map[string]string `json:"headers"`
+	Body          []byte            `json:"body"`
+	DeliveryCount int               `json:"delivery_count"`
 }
 
 // NewMessage creates a new message with the given optional headers and body
